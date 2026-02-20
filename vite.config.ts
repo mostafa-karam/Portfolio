@@ -30,6 +30,21 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    chunkSizeWarningLimit: 700,
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes("node_modules")) {
+            if (id.includes("framer-motion")) return "vendor-framer-motion";
+            if (id.includes("recharts")) return "vendor-recharts";
+            if (id.includes("react-dom") || id.includes("react"))
+              return "vendor-react";
+            if (id.includes("lucide-react")) return "vendor-icons";
+            return "vendor";
+          }
+        },
+      },
+    },
   },
   server: {
     fs: {
