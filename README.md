@@ -1,78 +1,85 @@
-# Portfolio - Mostafa Karam
+# Cybersecurity Analyst & Full Stack Developer Portfolio
 
-A modern, high-performance portfolio website for a Cybersecurity Analyst and Full Stack Developer. Built with React, Vite, Express, and Tailwind CSS.
+A modern, high-performance portfolio website for **Mostafa Karam**. Built with a Nintendo-style dark theme, featuring smooth animations, a terminal-inspired about section, and a secure contact form.
 
-## 🚀 Getting Started
+## 🚀 Tech Stack
 
-Follow these steps to set up the project locally after downloading the ZIP file.
+- **Frontend**: React 18, TypeScript, Vite, Tailwind CSS, Framer Motion, Radix UI
+- **Backend**: Express.js, Node.js
+- **Database**: PostgreSQL with Drizzle ORM
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React, React Icons
+
+## ✨ Features
+
+- **Dark Theme**: Permanent high-contrast dark mode with neon green accents.
+- **Responsive Design**: Optimized for all screen sizes from mobile to desktop.
+- **Terminal UI**: Interactive-style terminal for education and certifications.
+- **Loading Animation**: Custom intro sequence.
+- **Smooth Navigation**: Scroll-based navigation with parallax effects.
+- **Contact System**: Fully functional contact form with database persistence.
+
+## 🛠️ Local Setup
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-- A PostgreSQL database (optional for local development if you use the provided mock storage, but required for production)
+- Node.js (v18+)
+- PostgreSQL database
 
-### Database Setup (PostgreSQL)
+### Installation
 
-The project uses **PostgreSQL** with **Drizzle ORM**.
+1. Clone the repository:
 
-1. **Get a Connection String**:
-   - You can use [Neon](https://neon.tech/), [Railway](https://railway.app/), or any PostgreSQL provider.
-2. **Set Environment Variable**:
-   - Create a `.env` file in the root directory:
-     ```env
-     DATABASE_URL=postgres://user:password@host:port/dbname
-     ```
-3. **Push Schema to Database**:
-   - Run this command to create the necessary tables in your database:
-     ```bash
-     npx drizzle-kit push
-     ```
-
----
-
-## 📤 Deploying to GitHub
-
-1. **Create a new repository** on [GitHub](https://github.com/new).
-2. **Initialize Git** in your local project folder:
    ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   ```
-3. **Link to GitHub** and push:
-   ```bash
-   git remote add origin https://github.com/your-username/your-repo-name.git
-   git branch -M main
-   git push -u origin main
+   git clone <your-repo-url>
+   cd portfolio
    ```
 
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Configure Environment Variables:
+   Create a `.env` file or set the following:
+
+   ```env
+   DATABASE_URL=postgresql://user:password@localhost:5432/portfolio
+   ```
+
+4. Push Database Schema:
+
+   ```bash
+   npm run db:push
+   ```
+
+5. Start Development Server:
+   ```bash
+   npm run dev
+   ```
+
+## 📦 Project Structure
+
+- `client/`: React frontend application
+- `server/`: Express backend API
+- `shared/`: Shared types and database schemas
+- `migrations/`: Database migration files
+
+## 🚀 Deployment
+
+### Vercel / Netlify (Frontend)
+
+The frontend can be deployed as a static site after building:
+
+```bash
+npm run build
+```
+
+### Backend & Database
+
+The backend requires a Node.js environment and a PostgreSQL instance (e.g., Neon, Railway, or AWS RDS).
+
 ---
 
-## 🌐 Deploying to Vercel
-
-Vercel is the best platform for deploying Vite-based applications.
-
-1. **Log in to [Vercel](https://vercel.com)**.
-2. Click **"Add New"** > **"Project"**.
-3. **Import your GitHub repository**.
-4. **Configure Project**:
-   - **Framework Preset**: Vite
-   - **Root Directory**: `./` (default)
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-5. **Environment Variables**: If you are using a database, add your `DATABASE_URL` in the "Environment Variables" section.
-6. Click **Deploy**.
-
----
-
-## 🛠 Tech Stack
-
-- **Frontend**: React, Vite, Tailwind CSS, Framer Motion, Lucide React
-- **Backend**: Node.js, Express
-- **Database**: PostgreSQL with Drizzle ORM
-- **Styling**: Shadcn UI
-
-## 📄 License
-
-This project is licensed under the MIT License.
+Designed & Built by Mostafa Karam.
