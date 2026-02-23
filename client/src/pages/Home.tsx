@@ -60,7 +60,7 @@ const projects = [
     description: "Conducted web application security testing focusing on SQLi, XSS, and authentication flaws using Burp Suite, OWASP ZAP, and Nmap.",
     tech: ["Burp Suite", "Nmap", "OWASP ZAP", "DEPI"],
     type: "Security Assessment",
-    githubUrl: "https://github.com/mostafa-karam",
+    githubUrl: "https://github.com/mostafa-karam/tryhackme.com-road",
     demoUrl: "#"
   },
   {
@@ -68,16 +68,16 @@ const projects = [
     description: "Production-ready MERN stack application with JWT, RBAC, MFA, and advanced backend security (rate limiting, CSRF protection).",
     tech: ["MongoDB", "Express", "React", "Node.js"],
     type: "Secure MERN Stack",
-    githubUrl: "https://github.com/mostafa-karam",
-    demoUrl: "#"
+    githubUrl: "https://github.com/mostafa-karam/eventx-studio",
+    demoUrl: "https://eventx-studio.vercel.app/"
   },
   {
     title: "FCDS Platform",
     description: "Academic management platform with role-based access control and interactive dashboards using Chart.js.",
     tech: ["JavaScript", "Chart.js", "Responsive UI"],
     type: "Management Platform",
-    githubUrl: "https://github.com/mostafa-karam",
-    demoUrl: "#"
+    githubUrl: "https://github.com/mostafa-karam/FCDS",
+    demoUrl: "https://fcds-mk.vercel.app/"
   }
 ];
 
