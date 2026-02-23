@@ -117,17 +117,17 @@ export default function Home() {
       <Navbar />
 
       {/* --- HERO SECTION --- */}
-      <section id="hero" className="relative h-screen flex items-center justify-center pt-16 overflow-hidden">
+      <section id="hero" className="relative min-h-[70vh] md:h-screen flex items-center justify-center pt-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-0" />
         
         {/* Decorative elements with parallax */}
         <motion.div 
           style={{ y: y1 }}
-          className="absolute top-1/4 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" 
+          className="hidden sm:block absolute top-1/4 left-6 w-48 h-48 sm:w-64 sm:h-64 bg-primary/5 rounded-full blur-3xl" 
         />
         <motion.div 
           style={{ y: y2 }}
-          className="absolute bottom-1/4 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" 
+          className="hidden sm:block absolute bottom-1/4 right-6 w-64 h-64 sm:w-96 sm:h-96 bg-blue-500/5 rounded-full blur-3xl" 
         />
 
         <div className="container px-6 z-10 flex flex-col md:flex-row items-center justify-between gap-12 max-w-[1100px] mx-auto">
@@ -175,14 +175,14 @@ export default function Home() {
               Passionate about offensive security and building resilient systems.
             </p>
             
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <Link to="projects" smooth={true} duration={500} offset={-100}>
-                <Button size="lg" className="bg-primary text-black hover:bg-primary/90 font-bold">
+            <div className="w-full flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <Link to="projects" smooth={true} duration={500} offset={-100} className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto bg-primary text-black hover:bg-primary/90 font-bold">
                   View Projects
                 </Button>
               </Link>
-              <a href="/resume.pdf" download="Mostafa_Karam_Resume.pdf">
-                <Button size="lg" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10">
+              <a href="/resume.pdf" download="Mostafa_Karam_Resume.pdf" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/50 text-primary hover:bg-primary/10">
                   Download CV
                 </Button>
               </a>
@@ -207,7 +207,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex justify-center relative group flex-1"
           >
-            <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_0_50px_rgba(74,222,128,0.3)] rounded-2xl">
+            <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_0_50px_rgba(74,222,128,0.3)] rounded-2xl">
               {/* Profile Image with Cyber border */}
               <div className="absolute inset-0 border-2 border-primary/20 rounded-2xl overflow-hidden z-10">
                 <img 
