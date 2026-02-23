@@ -37,8 +37,8 @@ export default defineConfig({
           if (id.includes("node_modules")) {
             if (id.includes("framer-motion")) return "vendor-framer-motion";
             if (id.includes("recharts")) return "vendor-recharts";
-            if (id.includes("react-dom") || id.includes("react"))
-              return "vendor-react";
+            // Keep React with the main vendor chunk to avoid circular import issues
+            // if (id.includes("react-dom") || id.includes("react")) return "vendor-react";
             if (id.includes("lucide-react")) return "vendor-icons";
             return "vendor";
           }
