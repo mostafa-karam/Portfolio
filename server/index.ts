@@ -23,6 +23,26 @@ app.use(
 
 app.use(express.urlencoded({ extended: false }));
 
+// Lightweight CORS middleware for API routes. Allows configuring origin
+// via the CORS_ORIGIN env var (defaults to '*'). This avoids adding a
+// new dependency while ensuring cross-origin POSTs (from Vercel frontend)
+// can reach the API hosted on another domain (e.g., Railway).
+app.use((req, res, next) => {
+  if (req.path.startsWith("/api")) {
+    const origin =
+      process.env.CORS_ORIGIN || "https://mostafa-karam-portfolio.vercel.app";
+    res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+
+    if (req.method === "OPTIONS") {
+      return res.sendStatus(204);
+    }
+  }
+
+  next();
+});
+
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
