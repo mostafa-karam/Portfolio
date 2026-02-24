@@ -66,7 +66,8 @@ export function Navbar() {
           ))}
           <div className="flex items-center gap-4 ml-4">
             <a
-              href="#"
+              href="/resume.pdf" 
+              download="Mostafa_Karam_Resume.pdf"
               className="px-5 py-2 rounded font-mono text-sm font-bold bg-primary text-black hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(74,222,128,0.4)] transition-all"
             >
               Download CV
