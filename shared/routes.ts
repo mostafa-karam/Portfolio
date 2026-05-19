@@ -1,5 +1,5 @@
-import { z } from 'zod';
-import { insertMessageSchema } from './schema';
+import { z } from "zod";
+import { insertMessageSchema } from "./schema";
 
 export const errorSchemas = {
   validation: z.object({
@@ -14,8 +14,8 @@ export const errorSchemas = {
 export const api = {
   contact: {
     submit: {
-      method: 'POST' as const,
-      path: '/api/contact' as const,
+      method: "POST" as const,
+      path: "/api/contact" as const,
       input: insertMessageSchema,
       responses: {
         200: z.object({
@@ -33,7 +33,10 @@ export const api = {
   },
 };
 
-export function buildUrl(path: string, params?: Record<string, string | number>): string {
+export function buildUrl(
+  path: string,
+  params?: Record<string, string | number>,
+): string {
   let url = path;
   if (params) {
     Object.entries(params).forEach(([key, value]) => {
