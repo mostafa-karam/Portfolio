@@ -3,6 +3,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import { connectDB } from "./db";
 
 const app = express();
 const httpServer = createServer(app);
@@ -24,14 +25,26 @@ app.use(
 app.use(express.urlencoded({ extended: false }));
 
 // Lightweight CORS middleware for API routes. Allows configuring origin
-// via the CORS_ORIGIN env var (defaults to '*'). This avoids adding a
+// via the CORS_ORIGIN env var. In development, allows localhost. This avoids adding a
 // new dependency while ensuring cross-origin POSTs (from Vercel frontend)
 // can reach the API hosted on another domain (e.g., Railway).
 app.use((req, res, next) => {
   if (req.path.startsWith("/api")) {
-    const origin =
+    const requestOrigin = req.get("origin");
+    const isLocalhost =
+      requestOrigin?.includes("localhost") ||
+      requestOrigin?.includes("127.0.0.1");
+    const isDevelopment = process.env.NODE_ENV === "development";
+
+    let allowedOrigin =
       process.env.CORS_ORIGIN || "https://mostafa-karam-portfolio.vercel.app";
-    res.setHeader("Access-Control-Allow-Origin", origin);
+
+    // In development, allow localhost requests
+    if (isDevelopment && isLocalhost) {
+      allowedOrigin = requestOrigin || allowedOrigin;
+    }
+
+    res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
 
@@ -81,6 +94,7 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  await connectDB();
   await registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {

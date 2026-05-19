@@ -1,5 +1,4 @@
-import { messages, type InsertMessage, type Message } from "@shared/schema";
-import { db } from "./db";
+import { type InsertMessage, type Message, MessageModel } from "@shared/schema";
 
 export interface IStorage {
   createMessage(message: InsertMessage): Promise<Message>;
@@ -7,8 +6,8 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   async createMessage(insertMessage: InsertMessage): Promise<Message> {
-    const [message] = await db.insert(messages).values(insertMessage).returning();
-    return message;
+    const message = new MessageModel(insertMessage);
+    return await message.save();
   }
 }
 
