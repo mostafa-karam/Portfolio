@@ -8,9 +8,10 @@ export function useContact() {
 
   return useMutation({
     mutationFn: async (data: InsertMessage) => {
+      // Use environment variable for backend URL, otherwise use default Railway backend
       const base =
         (import.meta.env.VITE_API_BASE as string) ||
-        (typeof window !== "undefined" ? window.location.origin : "");
+        "https://portfolio-mk-backend.up.railway.app";
       const url = base
         ? `${base.replace(/\/$/, "")}${api.contact.submit.path}`
         : api.contact.submit.path;
