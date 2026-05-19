@@ -1,5 +1,5 @@
 {
   "buildCommand": "npm run build:client",
-  "installCommand": "npm install",
+  "installCommand": "npm ci --include=dev",
   "outputDirectory": "dist/public"
 }
