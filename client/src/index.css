@@ -43,6 +43,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'JetBrains Mono', monospace;
@@ -52,6 +53,34 @@
 @layer utilities {
   .glass {
     @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .dossier-card {
+    @apply relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl;
+  }
+
+  .dossier-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(135deg, rgba(74, 222, 128, 0.12), transparent 34%),
+      linear-gradient(315deg, rgba(56, 189, 248, 0.08), transparent 30%);
+    opacity: 0.75;
+  }
+
+  .scanline {
+    background-image: linear-gradient(to bottom, transparent 0, transparent 7px, rgba(74, 222, 128, 0.035) 8px);
+    background-size: 100% 8px;
+  }
+
+  .corner-cuts {
+    clip-path: polygon(0 10px, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  }
+
+  .section-band {
+    @apply relative border-y border-white/10 bg-white/[0.02];
   }
   
   .neon-text {

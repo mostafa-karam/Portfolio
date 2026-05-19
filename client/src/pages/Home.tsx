@@ -5,7 +5,7 @@ import {
   Github, Linkedin, Mail, ChevronDown, Send, Shield, Lock, Code,
   Terminal, ExternalLink, Trophy, BookOpen, Cpu, Globe, ChevronRight,
   Copy, Check, Eye, Star, Zap, Database, Server, X, MapPin, Calendar,
-  Fingerprint, Bug, Network, Cloud, BrainCircuit, ShieldCheck, BarChart3, ShoppingCart, Search
+  Fingerprint, Bug, Network, Cloud, BrainCircuit, ShieldCheck, BarChart3, ShoppingCart, Search, Phone
 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -25,39 +25,48 @@ import profileImg from "@assets/photo_2025-01-26_16-06-16_1771256993035.jpg";
 // ── DATA ────────────────────────────────────────────────────────────────────
 
 const stats = [
-  { label: "Projects Built", value: "15+", icon: Code },
-  { label: "Vulnerabilities Found", value: "30+", icon: Shield },
-  { label: "Certifications", value: "5", icon: Trophy },
-  { label: "Months Experience", value: "18+", icon: Star },
+  { label: "Vulnerabilities Reported", value: "15+", icon: Shield },
+  { label: "Critical/High Findings", value: "7", icon: Bug },
+  { label: "Training Tracks", value: "5", icon: Trophy },
+  { label: "Security Report Pages", value: "31", icon: BookOpen },
 ];
 
 const experience = [
   {
-    role: "CIB Summer Program",
-    company: "Commercial International Bank (CIB)",
-    period: "05/2025 – 09/2025",
-    type: "Internship",
+    role: "Vulnerability Analyst & Penetration Tester (Project Lead)",
+    company: "Digital Egypt Pioneers Initiative (DEPI)",
+    period: "11/2025 – 07/2026",
+    type: "Government Program",
     color: "#4ade80",
-    description: "Gained insights into the banking sector, digital transformation, and financial services. Participated in structured learning sessions and hands-on banking operations.",
-    tags: ["Banking", "Fintech", "Digital Transformation"],
+    description: "Directed a 5-member red team through a full black-box assessment of an internal non-production web app. Found 10 vulnerabilities, achieved root-level compromise, and authored a 31-page security assessment report with CVSS ratings, proof-of-concept evidence, and remediation roadmap.",
+    tags: ["Red Team Lead", "OWASP Top 10", "Reporting"],
   },
   {
-    role: "Full-Stack Developer",
-    company: "MAIM Digital Solutions",
+    role: "Web Development Intern",
+    company: "Maim Digital Solutions (FCDS Collaboration)",
     period: "07/2025 – 09/2025",
     type: "Internship",
     color: "#60a5fa",
-    description: "Learned and applied core web technologies including React.js and built RESTful APIs using Node.js and Express.js. Delivered production-ready features.",
-    tags: ["React", "Node.js", "REST APIs"],
+    description: "Architected EventX Studio, a secure MERN event platform with JWT, RBAC, MFA, rate limiting, CSRF tokens, CORS policies, and HTTP security headers. Configured Jest, Supertest, and Cypress test suites.",
+    tags: ["MERN", "Secure Auth", "Testing"],
   },
   {
-    role: "Front-End Web Developer",
+    role: "Summer Program Participant",
+    company: "Commercial International Bank (CIB)",
+    period: "05/2025 – 09/2025",
+    type: "Program",
+    color: "#06b6d4",
+    description: "Gained exposure to how major financial institutions approach cybersecurity, fraud prevention, compliance, transaction security, and digital banking infrastructure.",
+    tags: ["Banking Security", "Fraud Prevention", "Compliance"],
+  },
+  {
+    role: "Front-End Development Intern",
     company: "Elevvo Pathways",
     period: "04/2025 – 08/2025",
     type: "Internship",
     color: "#a78bfa",
-    description: "Completed an intensive front-end internship focusing on responsive design and modern UI/UX practices. Shipped multiple client-facing components.",
-    tags: ["HTML/CSS", "Responsive Design", "UI/UX"],
+    description: "Built a role-based academic platform front-end with separate student, faculty, and admin dashboards, Chart.js visualizations, mobile-first layouts, and a custom JavaScript component library.",
+    tags: ["Role-Based UI", "Chart.js", "Responsive Design"],
   },
   {
     role: "Cybersecurity Intern",
@@ -65,28 +74,42 @@ const experience = [
     period: "04/2025 – 05/2025",
     type: "Internship",
     color: "#f59e0b",
-    description: "Participated in red teaming simulations and secure coding assessments. Conducted vulnerability scans and web penetration testing exercises.",
-    tags: ["Pentesting", "Red Team", "OWASP"],
+    description: "Executed independent web app penetration tests against simulated targets, reported SQLi, XSS, IDOR, and authentication bypass issues, and built 3 Python desktop security tools with Tkinter.",
+    tags: ["Burp Suite", "Nmap", "Python Tools"],
   },
   {
-    role: "IT Support Assistant",
+    role: "IT Support & Customer Service Assistant",
     company: "Mega Store",
     period: "06/2024 – 11/2024",
     type: "Part-time",
     color: "#f87171",
-    description: "Installed and configured operating systems, software, and hardware. Ensured device security with updates and patches.",
-    tags: ["IT Support", "Networking", "Security"],
+    description: "Configured and maintained operating systems, hardware, and enterprise software for 20+ end-user devices while producing maintenance reports for asset tracking and audit readiness.",
+    tags: ["IT Support", "Troubleshooting", "Asset Tracking"],
   },
 ];
 
 const projects = [
   {
-    title: "EventX Studio",
-    description: "Production-ready MERN stack application with JWT auth, RBAC, MFA (2FA), session/device tracking, and account lockout protection. Secured with rate limiting, CSRF protection, CORS policies, and HTTP security headers. Built complete event lifecycle features including CRUD, media uploads, ticketing system, QR-based validation, and real-time analytics dashboards using Recharts.",
-    tech: ["MongoDB", "Express", "React", "Node.js", "JWT", "RBAC", "MFA", "Recharts"],
+    title: "TryHackMe Road — Full Web Application Penetration Test",
+    description: "Led a 5-member black-box pentest against a production-like Linux web server. Discovered exposed admin paths, exploited IDOR for admin takeover, bypassed MIME validation to upload a PHP reverse shell, found unauthenticated MongoDB, dumped backup credentials, and achieved full root access. Delivered 10 findings, including 2 Critical and 5 High, in a 31-page CVSS-scored report.",
+    tech: ["Nmap", "Gobuster", "WhatWeb", "Burp Suite", "Metasploit", "Netcat", "LinPEAS", "Nikto"],
+    type: "Security Research",
+    period: "01/2026 – 06/2026",
+    org: "Shield Secure Consulting",
+    githubUrl: "https://github.com/mostafa-karam",
+    demoUrl: "#",
+    featured: true,
+    stats: { stars: 14, views: 420 },
+    icon: "Bug",
+    hasPreview: false,
+  },
+  {
+    title: "EventX Studio — Secure MERN Stack Event Platform",
+    description: "Production-ready MERN event platform with JWT auth, RBAC, MFA, session/device tracking, account lockout, rate limiting, CSRF tokens, CORS policies, and HTTP security headers. Includes event CRUD, Cloudinary media uploads, QR ticket validation, capacity management, Stripe payments, real-time Recharts analytics, and Jest/Supertest/Cypress test coverage.",
+    tech: ["MongoDB", "Express", "React", "Node.js", "JWT", "RBAC", "MFA", "Docker", "Cypress"],
     type: "Secure MERN Stack",
-    period: "04/2025 – 09/2025",
-    org: "MAIM Digital Solutions",
+    period: "08/2025 – 01/2026",
+    org: "Maim Digital Solutions",
     githubUrl: "https://github.com/mostafa-karam/eventx-studio",
     demoUrl: "https://eventx-studio.vercel.app/",
     featured: true,
@@ -95,37 +118,23 @@ const projects = [
     hasPreview: true,
   },
   {
-    title: "Faculty of Computer and Data Science Platform",
-    description: "Responsive front-end for enterprise-grade academic management platform. Implemented role-based access control with specialized interfaces for students, faculty, and administrators. Created interactive dashboards with Chart.js data visualizations for academic performance metrics. Designed mobile-first responsive UI with custom component library and modular JavaScript architecture.",
-    tech: ["React", "Chart.js", "JavaScript", "Responsive Design", "HTML/CSS"],
-    type: "Management Platform",
-    period: "05/2025 – Present",
-    org: "Personal Project",
-    githubUrl: "https://github.com/mostafa-karam/FCDS",
-    demoUrl: "https://fcds-mk.vercel.app/",
-    featured: true,
-    stats: { stars: 8, views: 210 },
-    icon: "BarChart3",
-    hasPreview: true,
-  },
-  {
-    title: "Vulnerability Analyst & Penetration Tester",
-    description: "Systematic web application security testing focusing on SQLi, XSS, and authentication flaws. Expertise with Burp Suite, OWASP ZAP, Gobuster, and Nmap for reconnaissance and enumeration. Performed comprehensive vulnerability analysis, network scanning, service discovery, and wrote structured reports with risk assessment and mitigation strategies.",
-    tech: ["Burp Suite", "OWASP ZAP", "Nmap", "Gobuster", "Python"],
-    type: "Security Research",
-    period: "11/2025 – Present",
-    org: "DEPI",
+    title: "Interactive Bug Bounty Checklist Tool",
+    description: "Client-side checklist used during HackerOne and Bugcrowd sessions. Covers OWASP Top 10, IDOR, broken access control, authentication, XSS, SQLi, CSRF, SSRF, file upload, API security, and business logic testing with persistent checkbox state, per-category progress bars, severity labels, and one-click export.",
+    tech: ["HTML", "CSS", "Vanilla JavaScript", "OWASP Top 10", "Bug Bounty"],
+    type: "Security Tool",
+    period: "01/2026 – 06/2026",
+    org: "Personal Security Research",
     githubUrl: "https://github.com/mostafa-karam",
     demoUrl: "#",
-    featured: false,
-    stats: { stars: 10, views: 240 },
-    icon: "Bug",
+    featured: true,
+    stats: { stars: 11, views: 260 },
+    icon: "ShieldCheck",
     hasPreview: false,
   },
   {
-    title: "Cyber Security Tools Suite",
-    description: "Desktop application suite featuring password strength analyzer, port scanner, and file encryption tool. Built with Python and Tkinter for intuitive GUI. Integrated real-time feedback, threading for async operations, and cryptographic operations. Demonstrates secure coding practices and red team methodologies.",
-    tech: ["Python", "Tkinter", "Cryptography", "Socket", "Threading"],
+    title: "Cybersecurity Desktop Toolkit — Python Security Tools Suite",
+    description: "Python/Tkinter suite containing a real-time password strength analyzer, multi-threaded TCP port scanner that scans 1,000 ports in under 10 seconds, and AES-based file encryption/decryption utility with secure key handling, progress tracking, and drag-and-drop support.",
+    tech: ["Python", "Tkinter", "Socket", "Cryptography", "Threading"],
     type: "Security Tools",
     period: "02/2025 – 05/2025",
     org: "Hack Secure Internship",
@@ -137,9 +146,23 @@ const projects = [
     hasPreview: false,
   },
   {
-    title: "E-commerce System",
-    description: "Full-featured e-commerce application with comprehensive product catalog, user authentication, and order management. Applied OOP principles to create extensible product hierarchy supporting books, electronics, and clothing. Developed intuitive GUI using Java Swing with responsive design. Implemented persistent shopping cart system with complete checkout process.",
-    tech: ["Java", "Swing", "OOP", "JDBC", "Database"],
+    title: "Faculty of Computer and Data Science Platform",
+    description: "Responsive academic platform front-end with role-based student, faculty, and admin dashboards. Built Chart.js visualizations for academic metrics, a custom JavaScript component library, modular UI architecture, and mobile-first layouts.",
+    tech: ["React", "Chart.js", "JavaScript", "Responsive Design", "HTML/CSS"],
+    type: "Management Platform",
+    period: "04/2025 – 08/2025",
+    org: "Elevvo Pathways",
+    githubUrl: "https://github.com/mostafa-karam/FCDS",
+    demoUrl: "https://fcds-mk.vercel.app/",
+    featured: false,
+    stats: { stars: 8, views: 210 },
+    icon: "BarChart3",
+    hasPreview: true,
+  },
+  {
+    title: "E-Commerce System — Full-Featured Java Application",
+    description: "Java desktop application using OOP design patterns, polymorphism, inheritance, and factory patterns for an extensible product hierarchy. Includes product catalog search/filter, user authentication, persistent shopping cart sessions, order management, checkout flow, and Java Swing GUI with MVC separation.",
+    tech: ["Java", "Java Swing", "OOP", "Design Patterns", "MVC"],
     type: "E-commerce System",
     period: "02/2024 – 08/2024",
     org: "Personal Project",
@@ -152,8 +175,8 @@ const projects = [
   },
   {
     title: "AWS File-Sharing Application",
-    description: "Cloud-hosted file-sharing web application leveraging AWS infrastructure. Utilized EC2 for compute, S3 for scalable storage, IAM for secure access control, and VPC for network isolation. Implemented automated backup mechanisms and integrated CloudFront CDN for fast content delivery. Deployed with focus on security, scalability, and cost-optimization.",
-    tech: ["AWS EC2", "S3", "IAM", "VPC", "CloudFront", "Node.js"],
+    description: "Cloud-hosted file-sharing application using EC2, S3, IAM, VPC, and CloudFront. Designed around AWS security foundations including least-privilege identity, storage controls, network isolation, backup strategy, and cost-aware deployment decisions.",
+    tech: ["AWS EC2", "S3", "IAM", "VPC", "CloudFront", "Cloud Security"],
     type: "Cloud Infrastructure",
     period: "03/2025 – 06/2025",
     org: "AWS Academy Project",
@@ -168,41 +191,140 @@ const projects = [
 
 const skills = {
   "Programming": [
-    { name: "Python", level: 85, color: "#3776AB" },
-    { name: "JavaScript", level: 90, color: "#F7DF1E" },
-    { name: "Java", level: 70, color: "#007396" },
-    { name: "Bash/Shell", level: 75, color: "#4EAA25" },
-    { name: "PHP", level: 65, color: "#777BB4" },
+    { name: "Python Security Tooling", level: 88, color: "#3776AB" },
+    { name: "Bash Scripting", level: 78, color: "#4EAA25" },
+    { name: "JavaScript", level: 86, color: "#F7DF1E" },
+    { name: "PHP", level: 68, color: "#777BB4" },
+    { name: "Java OOP", level: 74, color: "#007396" },
   ],
   "Web Development": [
     { name: "React.js", level: 88, color: "#61DAFB" },
     { name: "Node.js", level: 82, color: "#339933" },
     { name: "Express.js", level: 80, color: "#ffffff" },
-    { name: "MySQL / PostgreSQL", level: 72, color: "#4479A1" },
-    { name: "REST APIs", level: 85, color: "#4ade80" },
+    { name: "MongoDB", level: 76, color: "#47A248" },
+    { name: "REST APIs / JWT", level: 85, color: "#4ade80" },
   ],
   "Cybersecurity": [
-    { name: "Burp Suite", level: 80, color: "#FF6633" },
-    { name: "Nmap / Wireshark", level: 78, color: "#1679A7" },
-    { name: "Metasploit", level: 70, color: "#4ade80" },
-    { name: "OWASP Testing", level: 85, color: "#f59e0b" },
-    { name: "Penetration Testing", level: 75, color: "#f87171" },
+    { name: "Burp Suite / OWASP ZAP", level: 86, color: "#FF6633" },
+    { name: "Nmap / Gobuster / Nikto", level: 84, color: "#1679A7" },
+    { name: "Metasploit / Netcat", level: 78, color: "#4ade80" },
+    { name: "IDOR, XSS, SQLi, CSRF", level: 86, color: "#f59e0b" },
+    { name: "Reporting / CVSS", level: 82, color: "#f87171" },
   ],
   "Cloud & DevOps": [
-    { name: "AWS (EC2/S3/IAM)", level: 72, color: "#FF9900" },
-    { name: "Linux Administration", level: 80, color: "#FCC624" },
-    { name: "Git / GitHub", level: 90, color: "#f5f5f5" },
-    { name: "Docker", level: 55, color: "#2496ED" },
+    { name: "AWS EC2 / S3 / IAM / VPC", level: 78, color: "#FF9900" },
+    { name: "GuardDuty / CloudTrail", level: 70, color: "#06b6d4" },
+    { name: "Kali / Ubuntu / Windows Server", level: 82, color: "#FCC624" },
+    { name: "Git / GitHub / Docker", level: 84, color: "#2496ED" },
   ],
 };
 
 const certifications = [
-  { name: "CCNA – Cisco Networking", org: "Cisco", icon: Globe, color: "#1BA0D7" },
-  { name: "Red Teaming & Ethical Hacking", org: "DEPI", icon: Shield, color: "#ef4444" },
-  { name: "AWS Cloud Foundations", org: "Amazon Web Services", icon: Server, color: "#FF9900" },
-  { name: "Web Application Security", org: "Hack Secure", icon: Lock, color: "#4ade80" },
-  { name: "Python Programming", org: "CodeAlpha", icon: Code, color: "#3776AB" },
+  { name: "Red Teaming, Ethical Hacking & Penetration Testing", org: "Udemy · 09/2025 – Present", icon: Shield, color: "#ef4444" },
+  { name: "AWS Academy Graduate — Cloud Security Foundations", org: "Amazon Web Services · 05/2026", icon: Server, color: "#FF9900" },
+  { name: "Cisco CCNA — All 3 Modules Completed", org: "New Horizon + Cisco Networking Academy", icon: Globe, color: "#1BA0D7" },
+  { name: "AWS Academy Graduate — Cloud Foundations", org: "Amazon Web Services · 05/2025", icon: Cloud, color: "#f59e0b" },
+  { name: "Web Application Security & Python Tools", org: "Hack Secure", icon: Lock, color: "#4ade80" },
 ];
+
+const impactHighlights = [
+  { label: "Red Team Lead", value: "5-person", detail: "Directed a full black-box assessment", icon: ShieldCheck },
+  { label: "Security Findings", value: "10", detail: "2 Critical and 5 High vulnerabilities", icon: Bug },
+  { label: "Report Quality", value: "31 pages", detail: "CVSS, POCs, risk, and remediation", icon: BookOpen },
+  { label: "Practice", value: "Active", detail: "HackerOne and Bugcrowd methodology", icon: Search },
+];
+
+const capabilityGroups = [
+  {
+    title: "Recon & Mapping",
+    icon: Search,
+    color: "#38bdf8",
+    tools: ["Nmap", "Gobuster", "WhatWeb", "Nikto", "Wireshark"],
+    outcome: "Map services, hidden paths, exposed tech, and weak network surfaces.",
+  },
+  {
+    title: "Web Exploitation",
+    icon: Bug,
+    color: "#f97316",
+    tools: ["Burp Suite", "OWASP ZAP", "Sqlmap", "Hydra", "Manual Testing"],
+    outcome: "Validate IDOR, XSS, SQLi, CSRF, auth bypass, and file upload impact.",
+  },
+  {
+    title: "Post-Exploitation",
+    icon: Terminal,
+    color: "#4ade80",
+    tools: ["Metasploit", "Netcat", "LinPEAS", "Python3", "GCC"],
+    outcome: "Enumerate Linux targets, stabilize access, and prove privilege impact.",
+  },
+  {
+    title: "Secure Engineering",
+    icon: Code,
+    color: "#a78bfa",
+    tools: ["React", "Node.js", "Express", "MongoDB", "JWT", "Docker"],
+    outcome: "Build security-first MERN apps with auth, testing, and hardening built in.",
+  },
+  {
+    title: "Cloud & Networks",
+    icon: Cloud,
+    color: "#f59e0b",
+    tools: ["AWS IAM", "EC2", "S3", "VPC", "GuardDuty", "CCNA"],
+    outcome: "Apply cloud security foundations, network segmentation, and least privilege.",
+  },
+  {
+    title: "Reporting",
+    icon: BookOpen,
+    color: "#22c55e",
+    tools: ["CVSS", "POC Screenshots", "Risk Notes", "Remediation", "Executive Summary"],
+    outcome: "Turn technical findings into prioritized fixes stakeholders can understand.",
+  },
+];
+
+const projectFilters = Array.from(new Set(projects.map((p) => p.type)));
+
+const projectVisuals: Record<string, { label: string; metric: string; lines: string[]; panels: string[] }> = {
+  "Security Research": {
+    label: "Pentest Report",
+    metric: "10 findings",
+    lines: ["IDOR -> admin takeover", "RCE via upload bypass", "MongoDB credential dump"],
+    panels: ["2 Critical", "5 High", "Root access"],
+  },
+  "Secure MERN Stack": {
+    label: "App Dashboard",
+    metric: "Auth hardened",
+    lines: ["JWT + RBAC + MFA", "CSRF + rate limits", "Stripe + QR validation"],
+    panels: ["Events", "Tickets", "Analytics"],
+  },
+  "Security Tool": {
+    label: "Checklist UI",
+    metric: "OWASP flow",
+    lines: ["Access control", "Authentication", "Injection testing"],
+    panels: ["IDOR", "XSS", "SQLi"],
+  },
+  "Security Tools": {
+    label: "Desktop Toolkit",
+    metric: "3 tools",
+    lines: ["Password entropy", "1,000-port scanner", "AES file encryption"],
+    panels: ["Scanner", "Analyzer", "Encryptor"],
+  },
+  "Management Platform": {
+    label: "Academic Portal",
+    metric: "3 dashboards",
+    lines: ["Student dashboard", "Faculty insights", "Admin analytics"],
+    panels: ["Charts", "Roles", "Reports"],
+  },
+  "E-commerce System": {
+    label: "Java Storefront",
+    metric: "MVC app",
+    lines: ["Product catalog", "Persistent cart", "Order checkout"],
+    panels: ["Books", "Electronics", "Clothing"],
+  },
+  "Cloud Infrastructure": {
+    label: "AWS Topology",
+    metric: "Secure cloud",
+    lines: ["EC2 compute layer", "S3 storage controls", "IAM least privilege"],
+    panels: ["EC2", "S3", "IAM"],
+  },
+};
 
 // ── PROJECT PREVIEW MODAL ────────────────────────────────────────────
 
@@ -393,15 +515,15 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="relative bg-card border border-border rounded-xl p-6 text-center group hover:border-primary/40 transition-all hover:shadow-[0_0_30px_rgba(74,222,128,0.08)]"
+      className="dossier-card corner-cuts p-5 text-left group hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
     >
-      <div className="absolute top-3 right-3 opacity-10 group-hover:opacity-20 transition-opacity">
+      <div className="absolute top-3 right-3 opacity-10 group-hover:opacity-25 transition-opacity">
         <stat.icon className="w-8 h-8 text-primary" />
       </div>
-      <div className="text-3xl font-mono font-bold text-primary mb-1">
+      <div className="relative z-10 text-3xl font-mono font-bold text-primary mb-2">
         {isNaN(target) ? stat.value : `${count}${stat.value.replace(/\d+/, "")}`}
       </div>
-      <div className="text-xs text-muted-foreground font-mono uppercase tracking-widest">{stat.label}</div>
+      <div className="relative z-10 text-[11px] text-muted-foreground font-mono uppercase tracking-widest leading-relaxed">{stat.label}</div>
     </motion.div>
   );
 }
@@ -435,6 +557,7 @@ function EnhancedProjectCard({ project, index, onPreview }: { project: typeof pr
     "Secure MERN Stack": "#4ade80",
     "Management Platform": "#60a5fa",
     "Security Research": "#f59e0b",
+    "Security Tool": "#22c55e",
     "Security Tools": "#f87171",
     "E-commerce System": "#a78bfa",
     "Cloud Infrastructure": "#06b6d4",
@@ -462,114 +585,198 @@ function EnhancedProjectCard({ project, index, onPreview }: { project: typeof pr
     "Terminal": Terminal,
     "ShoppingCart": ShoppingCart,
     "Cloud": Cloud,
+    "ShieldCheck": ShieldCheck,
   };
   
   const IconComponent = iconMap[project.icon || "Code"] || Code;
+  const visual = projectVisuals[project.type] || projectVisuals["Security Research"];
+
+  if (!project.featured) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.35, delay: index * 0.04 }}
+        className="group relative overflow-hidden rounded-xl border border-white/10 bg-[#080b0d]/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-white/[0.035]"
+      >
+        <div className="absolute inset-x-0 top-0 h-px opacity-70" style={{ background: `linear-gradient(90deg, transparent, ${typeColor}, transparent)` }} />
+        <div className="flex h-full flex-col">
+          <div className="mb-4 flex items-start gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.035]">
+              <IconComponent className="h-5 w-5" style={{ color: typeColor }} />
+            </div>
+            <div className="min-w-0">
+              <div className="mb-2 flex flex-wrap items-center gap-2">
+                <span className="rounded-full border px-2.5 py-1 text-[10px] font-mono uppercase tracking-widest" style={{ color: typeColor, borderColor: `${typeColor}35`, background: `${typeColor}10` }}>
+                  {project.type}
+                </span>
+                <span className="text-[11px] text-muted-foreground/70">{project.period}</span>
+              </div>
+              <h3 className="text-lg font-bold leading-tight text-foreground transition-colors group-hover:text-primary">{project.title}</h3>
+            </div>
+          </div>
+
+          <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+
+          <div className="mb-5 flex flex-wrap gap-2">
+            {project.tech.slice(0, 5).map((t) => (
+              <span key={t} className="rounded-md border border-white/10 bg-white/[0.035] px-2.5 py-1 text-[11px] font-mono text-muted-foreground">
+                {t}
+              </span>
+            ))}
+            {project.tech.length > 5 && (
+              <span className="rounded-md border border-white/10 bg-white/[0.035] px-2.5 py-1 text-[11px] font-mono text-muted-foreground">
+                +{project.tech.length - 5}
+              </span>
+            )}
+          </div>
+
+          <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
+            <span className="text-[11px] font-mono text-muted-foreground/60">{project.org}</span>
+            <div className="flex items-center gap-2">
+              <button onClick={handleCopy} className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-white/[0.04] hover:text-primary" title="Copy GitHub URL">
+                {copied ? <Check className="h-4 w-4 text-primary" /> : <Copy className="h-4 w-4" />}
+              </button>
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-white/[0.04] hover:text-primary" title="Open code">
+                  <Github className="h-4 w-4" />
+                </a>
+              )}
+              {project.demoUrl && project.demoUrl !== "#" && (
+                <button onClick={handlePreview} className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-white/[0.04] hover:text-primary" title="Preview project">
+                  <Eye className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
   
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`group relative flex flex-col bg-gradient-to-br from-card/80 to-card/30 border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(74,222,128,0.15)] ${project.featured ? "border-primary/40 md:col-span-2" : "border-border/70"}`}
+      transition={{ duration: 0.45, delay: index * 0.06 }}
+      className={`group relative overflow-hidden rounded-xl border border-white/10 bg-[#080b0d]/90 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)] ${project.featured ? "lg:col-span-2" : ""}`}
     >
-      {/* Top accent bar */}
-      <div className="absolute top-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `linear-gradient(90deg, transparent, ${typeColor}, transparent)` }} />
-      
-      {/* Side accent */}
-      <div className="absolute left-0 top-0 bottom-0 w-1 opacity-70 group-hover:opacity-100 transition-opacity duration-300" style={{ background: typeColor }} />
-      
-      {/* Background animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/4 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      
-      {/* Icon background decoration */}
-      <div className="absolute -top-12 -right-12 w-40 h-40 opacity-[0.08] group-hover:opacity-[0.12] transition-opacity duration-500 pointer-events-none">
-        <IconComponent className="w-full h-full text-primary" />
+      <div className="absolute inset-x-0 top-0 h-px" style={{ background: `linear-gradient(90deg, transparent, ${typeColor}, transparent)` }} />
+      <div className="absolute -right-10 -top-10 h-32 w-32 opacity-[0.06] transition-opacity group-hover:opacity-[0.12]">
+        <IconComponent className="h-full w-full" style={{ color: typeColor }} />
       </div>
 
-      <div className="p-7 relative z-10 flex flex-col h-full">
-        {/* Header with type and icon */}
-        <div className="flex items-start justify-between mb-4 gap-4">
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-2 flex-wrap">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 border transition-all duration-300" style={{ background: `${typeColor}15`, borderColor: `${typeColor}30`, boxShadow: `0 0 12px ${typeColor}20` }}>
-                <IconComponent className="w-4 h-4" style={{ color: typeColor }} />
+      <div className="relative z-10">
+        <div className={`${project.featured ? "h-56 md:h-64" : "h-44"} relative overflow-hidden border-b border-white/10 bg-[#050708]`}>
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${typeColor}22, transparent 42%), radial-gradient(circle at 78% 20%, ${typeColor}24, transparent 32%)` }} />
+          <div className="absolute inset-0 opacity-25 cyber-grid" />
+          <div className="relative z-10 flex h-full flex-col p-4">
+            <div className="mb-3 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
               </div>
-              <motion.span
-                whileHover={{ scale: 1.05 }}
-                className="text-[10px] font-mono uppercase tracking-widest font-bold px-2.5 py-1 rounded-lg border transition-all duration-200 cursor-default"
-                style={{
-                  color: typeColor,
-                  background: `${typeColor}12`,
-                  borderColor: `${typeColor}25`,
-                }}
-              >
-                {project.type}
-              </motion.span>
-              {project.featured && (
-                <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-lg bg-primary/15 border border-primary/30 text-primary font-bold">⭐ Featured</span>
-              )}
+              <span className="rounded-full border border-white/10 bg-black/35 px-3 py-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                {visual.label}
+              </span>
             </div>
-            <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">{project.title}</h3>
+
+            <div className="grid flex-1 grid-cols-[1fr_0.72fr] gap-3">
+              <div className="rounded-xl border border-white/10 bg-black/45 p-4 backdrop-blur-sm">
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg border" style={{ borderColor: `${typeColor}40`, background: `${typeColor}14` }}>
+                    <IconComponent className="h-4 w-4" style={{ color: typeColor }} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60">Preview</div>
+                    <div className="text-sm font-mono font-bold text-foreground">{visual.metric}</div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  {visual.lines.map((line) => (
+                    <div key={line} className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                      <span className="h-1.5 w-1.5 rounded-full" style={{ background: typeColor }} />
+                      <span className="truncate">{line}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid gap-2">
+                {visual.panels.map((panel) => (
+                  <div key={panel} className="flex items-center justify-center rounded-lg border border-white/10 bg-white/[0.045] px-2 text-center text-[11px] font-mono text-foreground">
+                    {panel}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={`relative z-10 flex h-full flex-col ${project.featured ? "p-7 md:p-8" : "p-6"}`}>
+        <div className="mb-5 flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <div className="mb-3 flex flex-wrap items-center gap-2">
+              <span className="rounded-full border px-3 py-1 text-[10px] font-mono uppercase tracking-widest" style={{ color: typeColor, borderColor: `${typeColor}35`, background: `${typeColor}10` }}>
+                {project.type}
+              </span>
+              {project.featured && <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">Featured</span>}
+            </div>
+            <h3 className={`${project.featured ? "text-2xl md:text-3xl" : "text-xl"} font-bold leading-tight text-foreground transition-colors group-hover:text-primary`}>{project.title}</h3>
+          </div>
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.035]">
+            <IconComponent className="h-5 w-5" style={{ color: typeColor }} />
           </div>
         </div>
 
-        {/* Meta info */}
-        {(project.period || project.org) && (
-          <div className="flex flex-wrap gap-3 mb-3 text-xs text-muted-foreground/70">
-            {project.period && (
-              <div className="flex items-center gap-1">
-                <Calendar className="w-3 h-3" />
-                <span className="font-mono">{project.period}</span>
+        <div className="mb-5 flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted-foreground/75">
+          <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{project.period}</span>
+          <span className="inline-flex items-center gap-1.5"><Terminal className="h-3.5 w-3.5" />{project.org}</span>
+        </div>
+
+        <p className={`mb-5 flex-grow text-sm leading-relaxed text-muted-foreground ${project.featured ? "md:text-[15px]" : ""}`}>{project.description}</p>
+
+        {project.featured && (
+          <div className="mb-5 grid sm:grid-cols-3 gap-2">
+            {[
+              { label: "Scope", value: project.type },
+              { label: "Timeline", value: project.period },
+              { label: "Context", value: project.org },
+            ].map((item) => (
+              <div key={item.label} className="rounded-lg border border-white/10 bg-white/[0.025] p-3">
+                <div className="mb-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground/55">{item.label}</div>
+                <div className="text-xs font-semibold leading-snug text-foreground">{item.value}</div>
               </div>
-            )}
-            {project.org && (
-              <div className="flex items-center gap-1">
-                <span className="text-primary/60">•</span>
-                <span className="font-medium">{project.org}</span>
-              </div>
-            )}
+            ))}
           </div>
         )}
-        
-        {/* Description */}
-        <p className="text-sm text-muted-foreground/90 leading-relaxed mb-4 group-hover:text-muted-foreground transition-colors flex-grow">{project.description}</p>
-        
-        {/* Tech tags */}
-        <div className="flex flex-wrap gap-1.5 mb-5">
+
+        <div className="mb-6 flex flex-wrap gap-2">
           {project.tech.map((t, i) => (
             <motion.span
               key={t}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.04 }}
-              className="px-2.5 py-1 rounded-lg bg-primary/6 border border-primary/15 text-primary/85 text-[11px] font-mono font-medium hover:bg-primary/12 hover:border-primary/30 transition-all cursor-default"
+              transition={{ delay: i * 0.025 }}
+              className="rounded-md border border-white/10 bg-white/[0.035] px-2.5 py-1 text-[11px] font-mono text-muted-foreground transition-colors hover:border-primary/25 hover:text-primary"
             >
               {t}
             </motion.span>
           ))}
         </div>
 
-        {/* Footer with stats and actions */}
-        <div className="flex flex-col gap-3 pt-5 border-t border-border/50">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4 text-xs text-muted-foreground/70">
-              <motion.span className="flex items-center gap-1.5 hover:text-yellow-500 transition-colors cursor-default">
-                <Star className="w-3.5 h-3.5" />
-                <span className="font-semibold">{project.stats.stars}</span>
-              </motion.span>
-              <motion.span className="flex items-center gap-1.5 hover:text-blue-400 transition-colors cursor-default">
-                <Eye className="w-3.5 h-3.5" />
-                <span className="font-semibold">{project.stats.views}</span>
-              </motion.span>
-            </div>
-            <div className="flex items-center gap-2">
+        <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground/55">Selected work</span>
+          <div className="flex items-center gap-2">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleCopy}
-                className="p-1.5 text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
+              className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-white/[0.04] hover:text-primary"
                 title="Copy GitHub URL"
               >
                 {copied ? <Check className="w-4 h-4 text-primary" /> : <Copy className="w-4 h-4" />}
@@ -580,9 +787,9 @@ function EnhancedProjectCard({ project, index, onPreview }: { project: typeof pr
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded-lg hover:bg-primary/5 group/link font-medium"
+                className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-white/[0.04] hover:text-primary"
                 >
-                  <Github className="w-3.5 h-3.5 group-hover/link:scale-110 transition-transform" />
+                <Github className="w-3.5 h-3.5" />
                   <span>Code</span>
                 </motion.a>
               )}
@@ -590,13 +797,12 @@ function EnhancedProjectCard({ project, index, onPreview }: { project: typeof pr
                 <motion.button
                   whileHover={{ x: -2 }}
                   onClick={handlePreview}
-                  className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded-lg hover:bg-primary/5 group/link font-medium"
+                className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-white/[0.04] hover:text-primary"
                 >
-                  <Eye className="w-3.5 h-3.5 group-hover/link:scale-110 transition-transform" />
+                <Eye className="w-3.5 h-3.5" />
                   <span>Preview</span>
                 </motion.button>
               )}
-            </div>
           </div>
         </div>
       </div>
@@ -674,8 +880,25 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [projectFilter, setProjectFilter] = useState<string | null>(null);
-  const [projectSort, setProjectSort] = useState<"date" | "complexity" | "techs">("date");
   const [projectSearch, setProjectSearch] = useState("");
+
+  const visibleProjects = projects
+    .filter((project) => {
+      const query = projectSearch.trim().toLowerCase();
+      const matchesSearch =
+        !query ||
+        project.title.toLowerCase().includes(query) ||
+        project.description.toLowerCase().includes(query) ||
+        project.type.toLowerCase().includes(query) ||
+        project.org.toLowerCase().includes(query) ||
+        project.tech.some((tool) => tool.toLowerCase().includes(query));
+
+      return matchesSearch && (!projectFilter || project.type === projectFilter);
+    })
+    .sort((a, b) => {
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      return b.stats.views - a.stats.views;
+    });
 
   const form = useForm<InsertMessage>({
     resolver: zodResolver(insertMessageSchema),
@@ -705,48 +928,48 @@ export default function Home() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background z-0" />
-        <motion.div style={{ y: y1 }} className="hidden sm:block absolute top-1/4 left-6 w-72 h-72 bg-primary/4 rounded-full blur-3xl" />
-        <motion.div style={{ y: y2 }} className="hidden sm:block absolute bottom-1/4 right-6 w-96 h-96 bg-blue-500/4 rounded-full blur-3xl" />
+      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden scanline">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(74,222,128,0.12),transparent_28%),radial-gradient(circle_at_85%_30%,rgba(56,189,248,0.1),transparent_30%),linear-gradient(to_bottom,transparent,rgba(0,0,0,0.68))] z-0" />
+        <motion.div style={{ y: y1 }} className="hidden sm:block absolute top-1/4 left-6 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+        <motion.div style={{ y: y2 }} className="hidden sm:block absolute bottom-1/4 right-6 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
 
-        <div className="container px-6 z-10 flex flex-col md:flex-row items-center justify-between gap-12 max-w-[1100px] mx-auto">
+        <div className="container px-6 z-10 grid lg:grid-cols-[1.05fr_0.95fr] items-center gap-10 max-w-[1160px] mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            className="flex flex-col items-center md:items-start text-center md:text-left flex-1"
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-mono mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-black/40 text-primary text-xs font-mono mb-6 backdrop-blur-xl"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
-              Open to opportunities · Alexandria, Egypt
+              Open to security roles · Alexandria, Egypt
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight leading-none"
+              className="text-5xl md:text-7xl lg:text-7xl font-bold mb-4 tracking-tight leading-[0.95]"
             >
-              <span className="text-foreground">Mostafa</span>
+              <span className="text-foreground">Mostafa Karam</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-green-400 to-emerald-500">
-                Karam
+                Abd El-Kader
               </span>
             </motion.h1>
 
             <div className="text-lg md:text-xl font-mono text-primary mb-6 h-8">
               <Typewriter
                 options={{
-                  strings: ["Cybersecurity Analyst", "Red Teamer", "Full Stack Developer", "Bug Bounty Hunter", "Security Researcher"],
+                  strings: ["Junior Penetration Tester", "Web Application Security", "Red Teaming", "Bug Bounty Hunter", "Secure MERN Developer"],
                   autoStart: true,
                   loop: true,
                   cursor: "_",
@@ -760,25 +983,25 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="text-muted-foreground text-base md:text-lg mb-8 max-w-lg leading-relaxed"
+              className="text-muted-foreground text-base md:text-lg mb-8 max-w-2xl leading-relaxed"
             >
-              CS student at <span className="text-foreground font-medium">Alexandria University</span> bridging
-              secure infrastructure with scalable web applications. Passionate about offensive security,
-              CTFs, and building resilient systems.
+              Cybersecurity-focused CS student at <span className="text-foreground font-medium">Alexandria University</span>,
+              specializing in web application penetration testing and red teaming. Led a 5-member assessment
+              that uncovered 10 vulnerabilities and produced a 31-page professional report.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="w-full flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
+              className="w-full flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
             >
-              <Link to="projects" smooth={true} duration={600} offset={-100}>
+              <Link to="projects" smooth={true} duration={600} offset={-100} className="w-full sm:w-auto">
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-black hover:bg-primary/90 font-bold font-mono hover:shadow-[0_0_25px_rgba(74,222,128,0.4)] transition-all">
                   View Projects <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
-              <a href="/resume.pdf" download="Mostafa_Karam_Resume.pdf">
+              <a href="/resume.pdf" download="Mostafa_Karam_Resume.pdf" className="w-full sm:w-auto">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/40 text-primary hover:bg-primary/8 font-mono">
                   Download CV
                 </Button>
@@ -789,7 +1012,31 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1 }}
-              className="mt-10 flex gap-5 justify-center md:justify-start"
+              className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-2xl"
+            >
+              {impactHighlights.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 + index * 0.08 }}
+                  className="dossier-card corner-cuts p-4 text-left"
+                >
+                  <div className="relative z-10 flex items-center gap-2 text-primary mb-2">
+                    <item.icon className="w-4 h-4" />
+                    <span className="text-[10px] font-mono uppercase tracking-widest">{item.label}</span>
+                  </div>
+                  <div className="relative z-10 text-xl font-mono font-bold text-foreground">{item.value}</div>
+                  <div className="relative z-10 mt-1 text-[11px] leading-relaxed text-muted-foreground">{item.detail}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.15 }}
+              className="mt-8 flex gap-4 justify-center lg:justify-start"
             >
               {[
                 { href: "https://github.com/mostafa-karam", icon: Github, label: "GitHub" },
@@ -810,22 +1057,49 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="flex justify-center relative flex-1"
+            className="flex justify-center relative"
           >
-            <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[380px] lg:h-[380px] group">
-              <div className="absolute -inset-4 border border-dashed border-primary/30 rounded-2xl animate-[spin_25s_linear_infinite]" />
-              <div className="absolute -inset-2 border border-primary/10 rounded-2xl animate-[pulse_4s_ease-in-out_infinite]" />
-              <div className="absolute inset-0 border-2 border-primary/20 rounded-2xl overflow-hidden z-10 group-hover:border-primary/50 transition-all duration-500">
+            <div className="relative w-full max-w-[430px] group">
+              <div className="dossier-card corner-cuts p-4">
+                <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-[0.28em] text-primary">Security Profile</div>
+                    <div className="text-sm font-semibold text-foreground mt-1">Mostafa Karam Abd El-Kader</div>
+                  </div>
+                  <div className="rounded-md border border-primary/30 px-2 py-1 text-[10px] font-mono text-primary">ACTIVE</div>
+                </div>
+                <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-lg border border-primary/20">
                 <img src={profileImg} alt="Mostafa Karam"
-                  className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                    className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-2">
+                    {["Pentest", "Cloud", "MERN"].map((tag) => (
+                      <span key={tag} className="rounded-md border border-white/15 bg-black/55 px-2 py-1 text-center text-[10px] font-mono text-white backdrop-blur">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative z-10 mt-4 grid grid-cols-2 gap-3">
+                  {[
+                    ["Focus", "Web App Security"],
+                    ["Base", "Alexandria, Egypt"],
+                    ["Platforms", "HackerOne · Bugcrowd"],
+                    ["Edge", "Security + Engineering"],
+                  ].map(([label, value]) => (
+                    <div key={label} className="rounded-lg border border-white/10 bg-black/20 p-3">
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60">{label}</div>
+                      <div className="mt-1 text-xs font-medium text-foreground">{value}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
               <motion.div animate={{ y: [-4, 4, -4] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-5 -right-5 bg-black/90 backdrop-blur-sm px-3 py-2 rounded-xl border border-primary/30 z-20 shadow-lg">
                 <div className="flex items-center gap-1.5">
                   <Lock className="w-4 h-4 text-primary" />
-                  <span className="text-xs font-mono text-primary">Sec Expert</span>
+                  <span className="text-xs font-mono text-primary">Pentest</span>
                 </div>
               </motion.div>
               <motion.div animate={{ y: [4, -4, 4] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -855,8 +1129,9 @@ export default function Home() {
       </section>
 
       {/* ── STATS BAR ── */}
-      <section className="py-12 bg-secondary/5 border-y border-border">
-        <div className="container px-6 max-w-[1100px] mx-auto">
+      <section className="section-band py-14">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.03] via-transparent to-cyan-500/[0.03]" />
+        <div className="container px-6 max-w-[1160px] mx-auto relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s, i) => <StatCard key={s.label} stat={s} index={i} />)}
           </div>
@@ -864,47 +1139,58 @@ export default function Home() {
       </section>
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-28 relative overflow-hidden">
+      <section id="about" className="py-20 sm:py-28 relative overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute top-20 right-0 w-80 h-80 bg-primary/3 blur-[100px] rounded-full pointer-events-none" />
         <div className="absolute bottom-20 left-0 w-60 h-60 bg-blue-500/3 blur-[80px] rounded-full pointer-events-none" />
 
-        <div className="container px-6 max-w-[1100px] mx-auto">
-          <SectionHeading title="About Me" subtitle="Who I Am" number="01" align="center" />
+        <div className="container px-4 sm:px-6 max-w-[1160px] mx-auto">
+          <SectionHeading title="Security Dossier" subtitle="Who I Am" number="01" align="center" />
 
-          <div className="grid md:grid-cols-12 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start overflow-hidden">
             {/* Left: Main bio */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="md:col-span-7 space-y-6"
+              className="w-full min-w-0 max-w-full space-y-5 sm:space-y-6 md:col-span-7"
             >
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="dossier-card w-full max-w-full p-5 sm:p-7 space-y-4 overflow-hidden text-sm sm:text-base text-muted-foreground leading-relaxed">
                 <p>
                   I'm a <span className="text-foreground font-semibold">Cybersecurity-focused Computer Science student</span> at
-                  Alexandria University, Egypt. My journey began with curiosity about how systems break,
-                  which naturally evolved into a passion for both securing and building them.
+                  Alexandria University, specializing in web application penetration testing, red teaming,
+                  cloud security, and secure web development.
                 </p>
                 <p>
-                  With a dual focus on <span className="text-primary font-medium">offensive security</span> and
-                  <span className="text-primary font-medium"> full-stack development</span>, I bridge the gap between writing
-                  secure code and understanding how attackers think. I actively hunt bugs on HackerOne,
-                  Bugcrowd, YesWeHack, and Intigriti.
+                  I led a <span className="text-primary font-medium">5-member red team</span> through a full black-box assessment
+                  that uncovered 10 vulnerabilities, including 2 Critical and 5 High findings, and achieved
+                  root-level compromise with results documented in a 31-page report.
                 </p>
                 <p>
-                  When not researching vulnerabilities or building web apps, I'm deep in CTF competitions,
-                  studying new attack vectors, or automating security workflows with Python.
+                  I actively practice bug bounty methodology on HackerOne and Bugcrowd, and I build security-first
+                  software, including MERN platforms, Python desktop tools, and client-side testing checklists.
                 </p>
+                <div className="relative z-10 grid sm:grid-cols-3 gap-3 pt-3">
+                  {[
+                    ["Method", "OWASP Top 10"],
+                    ["Output", "CVSS + POCs"],
+                    ["Style", "Clear remediation"],
+                  ].map(([label, value]) => (
+                    <div key={label} className="min-w-0 rounded-lg border border-white/10 bg-black/20 p-3">
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-primary/70">{label}</div>
+                      <div className="mt-1 text-sm font-semibold text-foreground">{value}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Info grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 sm:pt-4">
                 {[
-                  { icon: BookOpen, label: "Education", value: "Alexandria University, CS 2023–Present", color: "#4ade80" },
-                  { icon: MapPin, label: "Location", value: "Smouha, Alexandria, Egypt", color: "#60a5fa" },
-                  { icon: Globe, label: "Languages", value: "Arabic (Native) · English (Fluent)", color: "#a78bfa" },
-                  { icon: Zap, label: "Status", value: "Open to internships & freelance", color: "#f59e0b" },
+                  { icon: BookOpen, label: "Education", value: "B.Sc. CS, Cybersecurity · 2023–2027", color: "#4ade80" },
+                  { icon: MapPin, label: "Location", value: "Alexandria, Egypt", color: "#60a5fa" },
+                  { icon: Globe, label: "Languages", value: "Arabic (Native) · English (Conversational)", color: "#a78bfa" },
+                  { icon: Zap, label: "Status", value: "Open to pentest, SOC, and security internships", color: "#f59e0b" },
                 ].map(({ icon: Icon, label, value, color }) => (
                   <motion.div
                     key={label}
@@ -912,7 +1198,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="group relative flex items-start gap-3 p-4 rounded-xl bg-gradient-to-br from-card to-card/50 border border-border/60 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(74,222,128,0.08)] overflow-hidden"
+                    className="group dossier-card flex w-full max-w-full min-w-0 items-start gap-3 overflow-hidden p-4 hover:border-primary/30 transition-all duration-300"
                   >
                     {/* Animated gradient background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -922,30 +1208,30 @@ export default function Home() {
                     </div>
                     <div className="min-w-0 relative z-10">
                       <div className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground group-hover:text-primary/70 transition-colors mb-0.5">{label}</div>
-                      <div className="text-sm text-foreground font-medium leading-tight">{value}</div>
+                      <div className="text-sm text-foreground font-medium leading-tight break-words">{value}</div>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
               {/* Specializations */}
-              <div className="pt-2">
+              <div className="pt-2 pb-14 sm:pb-0">
                 <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider mb-4 flex items-center gap-2">
                   <Fingerprint className="w-3 h-3 text-primary" /> Core Specializations
                 </p>
-                <div className="flex flex-wrap gap-2.5">
+                <div className="flex flex-wrap gap-2 pr-14 sm:pr-0">
                   {[
-                    { label: "Web App Security", icon: ShieldCheck },
-                    { label: "Penetration Testing", icon: Bug },
-                    { label: "Full Stack Dev", icon: Code },
-                    { label: "Network Security", icon: Network },
+                    { label: "Web App Pentesting", icon: ShieldCheck },
+                    { label: "Red Teaming", icon: Bug },
                     { label: "Cloud Security", icon: Cloud },
+                    { label: "Network Security", icon: Network },
                     { label: "Bug Bounty", icon: BrainCircuit },
+                    { label: "Secure MERN", icon: Code },
                   ].map(({ label, icon: Icon }) => (
                     <motion.span
                       key={label}
                       whileHover={{ scale: 1.05, y: -2 }}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-primary/8 to-primary/4 border border-primary/25 text-primary/90 text-xs font-mono hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(74,222,128,0.15)] cursor-pointer group"
+                      className="inline-flex min-w-0 items-center gap-1.5 rounded-lg border border-primary/25 bg-gradient-to-r from-primary/8 to-primary/4 px-2.5 py-1.5 text-[11px] font-mono text-primary/90 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(74,222,128,0.15)] sm:gap-2 sm:px-3 sm:text-xs cursor-pointer group"
                     >
                       <Icon className="w-3.5 h-3.5 group-hover:text-primary transition-colors" />
                       <span className="font-medium">{label}</span>
@@ -960,14 +1246,14 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="md:col-span-5 space-y-5"
+              className="w-full min-w-0 max-w-full space-y-5 md:col-span-5"
             >
               {/* Enhanced terminal block */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-black/70 to-black/40 rounded-xl border border-border/80 overflow-hidden shadow-2xl hover:shadow-[0_0_30px_rgba(74,222,128,0.1)] transition-all duration-500"
+                className="dossier-card w-full max-w-full overflow-hidden transition-all duration-500"
               >
                 {/* Terminal title bar */}
                 <div className="flex items-center justify-between px-4 py-3.5 border-b border-border/40 bg-gradient-to-r from-white/[0.03] to-transparent backdrop-blur-sm">
@@ -988,7 +1274,7 @@ export default function Home() {
                       className="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors cursor-pointer"
                     />
                   </div>
-                  <span className="text-xs text-muted-foreground font-mono flex items-center gap-2">
+                  <span className="min-w-0 truncate text-[10px] text-muted-foreground font-mono flex items-center gap-2 sm:text-xs">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
@@ -997,7 +1283,7 @@ export default function Home() {
                   </span>
                   <div className="w-12" />
                 </div>
-                <div className="p-5 font-mono text-sm space-y-3 min-h-[280px] flex flex-col">
+                <div className="min-w-0 p-4 sm:p-5 font-mono text-sm space-y-3 min-h-[280px] flex flex-col overflow-hidden">
                   <motion.div 
                     className="flex gap-2 items-center"
                     initial={{ opacity: 0, x: -10 }}
@@ -1026,13 +1312,13 @@ export default function Home() {
                     <span className="text-foreground">cat <span className="text-blue-400">mission.txt</span></span>
                   </motion.div>
                   <motion.div 
-                    className="text-muted-foreground/80 leading-relaxed text-xs border-l-2 border-primary/40 ml-2 pl-4 py-1"
+                    className="text-muted-foreground/80 leading-relaxed text-xs border-l-2 border-primary/40 ml-2 pl-4 py-1 break-words"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <span className="text-emerald-400">Break systems ethically</span> to make the web safer.<br/>
-                    <span className="text-emerald-400">Build fast, ship secure.</span> Repeat.
+                    <span className="text-emerald-400">Find real risk, prove impact,</span> and write reports people can act on.<br/>
+                    <span className="text-emerald-400">Build secure systems</span> with the attacker mindset in the room.
                   </motion.div>
 
                   <motion.div 
@@ -1045,12 +1331,12 @@ export default function Home() {
                     <span className="text-foreground">ls <span className="text-yellow-400">./skills/</span></span>
                   </motion.div>
                   <motion.div 
-                    className="pl-5 grid grid-cols-2 gap-x-4 gap-y-1 text-xs"
+                    className="pl-5 grid grid-cols-2 gap-x-3 gap-y-1 text-xs"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
                   >
-                    {["web-security/", "full-stack/", "pentest/", "bug-bounty/", "cloud-infra/", "automation/"].map((f, i) => (
+                    {["web-pentest/", "red-team/", "bug-bounty/", "cloud-security/", "secure-mern/", "reporting/"].map((f, i) => (
                       <motion.div
                         key={f}
                         initial={{ opacity: 0, x: -5 }}
@@ -1092,14 +1378,14 @@ export default function Home() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.08 }}
-                      className="group flex items-center gap-3 bg-gradient-to-r from-card to-card/40 border border-border/60 rounded-lg p-3.5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_15px_rgba(74,222,128,0.1)] cursor-default"
+                    className="group dossier-card flex w-full max-w-full min-w-0 items-center gap-3 overflow-hidden p-3.5 hover:border-primary/40 transition-all duration-300 cursor-default"
                     >
                       <div className="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 border border-border/40 group-hover:border-primary/40 transition-colors" style={{ background: `${cert.color}15`, boxShadow: `0 0 8px ${cert.color}20` }}>
                         <cert.icon className="w-4 h-4" style={{ color: cert.color }} />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="text-sm font-medium text-foreground truncate group-hover:text-primary transition-colors">{cert.name}</div>
-                        <div className="text-xs text-muted-foreground/80">{cert.org}</div>
+                        <div className="truncate text-sm font-medium text-foreground group-hover:text-primary transition-colors">{cert.name}</div>
+                        <div className="truncate text-xs text-muted-foreground/80">{cert.org}</div>
                       </div>
                       <motion.div
                         whileHover={{ scale: 1.2 }}
@@ -1117,85 +1403,139 @@ export default function Home() {
       </section>
 
       {/* ── SKILLS ── */}
-      <section id="skills" className="py-28 bg-secondary/5 border-y border-border relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/3 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-blue-500/3 blur-[80px] rounded-full pointer-events-none" />
-        <div className="container px-6 max-w-[1100px] mx-auto relative z-10">
-          <SectionHeading title="Technical Arsenal" subtitle="Skills & Tools" number="02" align="center" />
+      <section id="skills" className="py-28 relative overflow-hidden border-y border-white/10 bg-[#050708]">
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(74,222,128,0.05),transparent_22%,rgba(56,189,248,0.035)_70%,transparent)]" />
+        <div className="container px-6 max-w-[1160px] mx-auto relative z-10">
+          <SectionHeading title="Skills & Tools" subtitle="Capabilities" number="02" align="center" />
 
-          {/* Tab selector with icons */}
-          <div className="flex flex-wrap gap-2 justify-center mb-10">
-            {Object.keys(skills).map((tab) => {
-              const Icon = skillTabIcons[tab] || Code;
-              const isActive = activeSkillTab === tab;
-              return (
-                <button
-                  key={tab}
-                  onClick={() => setActiveSkillTab(tab)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-mono transition-all duration-300 ${
-                    isActive
-                      ? "bg-primary text-black font-bold shadow-[0_0_20px_rgba(74,222,128,0.3)]"
-                      : "bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/5"
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                  {tab}
-                </button>
-              );
-            })}
-          </div>
-
-          <AnimatePresence mode="wait">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-start">
             <motion.div
-              key={activeSkillTab}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.3 }}
-              className="max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-2xl border border-white/10 bg-white/[0.025] p-5 md:p-6"
             >
-              {/* Skill bars in a nice card */}
-              <div className="bg-card border border-border rounded-2xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-                <div className="grid md:grid-cols-2 gap-x-12 gap-y-5">
-                  {skills[activeSkillTab as keyof typeof skills].map((skill, i) => (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.08 }}
-                    >
-                      <SkillBar {...skill} />
-                    </motion.div>
-                  ))}
+              <div className="flex items-start justify-between gap-4 mb-6">
+                <div>
+                  <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary mb-2">Core Stack</p>
+                  <h3 className="text-2xl font-bold text-foreground">What I Use In The Field</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    A focused view of the tools I use to discover, exploit, validate, build, and document security work.
+                  </p>
                 </div>
-
-                {/* Category insight tag */}
-                <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    {(() => { const Icon = skillTabIcons[activeSkillTab] || Code; return <Icon className="w-4 h-4 text-primary" />; })()}
-                    <span className="text-xs font-mono text-primary">{activeSkillTab}</span>
-                  </div>
-                  <span className="text-xs font-mono text-muted-foreground">
-                    {skills[activeSkillTab as keyof typeof skills].length} skills tracked
-                  </span>
+                <div className="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
+                  <Cpu className="h-5 w-5 text-primary" />
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
 
-          {/* Bug bounty card */}
-          <div className="mt-10 max-w-3xl mx-auto">
-            <BugBountySection />
+              <div className="grid grid-cols-2 gap-2 mb-6">
+                {Object.keys(skills).map((tab) => {
+                  const Icon = skillTabIcons[tab] || Code;
+                  const isActive = activeSkillTab === tab;
+                  return (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveSkillTab(tab)}
+                      className={`flex min-h-[54px] items-center gap-3 rounded-xl border px-3 text-left transition-all ${
+                        isActive
+                          ? "border-primary/45 bg-primary/12 text-primary"
+                          : "border-white/10 bg-black/20 text-muted-foreground hover:border-white/20 hover:text-foreground"
+                      }`}
+                    >
+                      <Icon className="h-4 w-4 shrink-0" />
+                      <span className="text-xs font-mono font-semibold">{tab}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeSkillTab}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.22 }}
+                  className="rounded-xl border border-white/10 bg-black/25 p-5"
+                >
+                  <div className="mb-5 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      {(() => { const Icon = skillTabIcons[activeSkillTab] || Code; return <Icon className="h-4 w-4 text-primary" />; })()}
+                      <span className="font-mono text-sm font-bold text-foreground">{activeSkillTab}</span>
+                    </div>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                      {skills[activeSkillTab as keyof typeof skills].length} tools
+                    </span>
+                  </div>
+                  <div className="space-y-4">
+                    {skills[activeSkillTab as keyof typeof skills].map((skill) => (
+                      <SkillBar key={skill.name} {...skill} />
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {capabilityGroups.map((group, index) => (
+                <motion.div
+                  key={group.title}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.06 }}
+                  className="group rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white/[0.04]"
+                >
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border" style={{ background: `${group.color}12`, borderColor: `${group.color}35` }}>
+                      <group.icon className="h-5 w-5" style={{ color: group.color }} />
+                    </div>
+                    <div>
+                      <div className="mb-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground/50">Lane 0{index + 1}</div>
+                      <h3 className="font-mono font-bold text-foreground group-hover:text-primary transition-colors">{group.title}</h3>
+                    </div>
+                  </div>
+                  <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{group.outcome}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.tools.map((tool) => (
+                      <span key={tool} className="rounded-full border border-white/10 bg-black/25 px-2.5 py-1 text-[11px] font-mono text-muted-foreground">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-8 rounded-2xl border border-primary/15 bg-primary/[0.035] p-5"
+          >
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 className="font-mono font-bold text-foreground">Bug bounty focus</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Active methodology across access control, auth, injection, upload, and business logic testing.</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["HackerOne", "Bugcrowd", "IDOR", "XSS", "SQLi", "CSRF", "Business Logic"].map((item) => (
+                  <span key={item} className="rounded-full border border-primary/20 bg-black/20 px-3 py-1 text-xs font-mono text-primary/90">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ── EXPERIENCE ── */}
       <section id="experience" className="py-28 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/2 blur-[120px] rounded-full pointer-events-none" />
-        <div className="container px-6 max-w-[1100px] mx-auto">
-          <SectionHeading title="Professional Journey" subtitle="Experience" number="03" align="center" />
+        <div className="container px-6 max-w-[1160px] mx-auto">
+          <SectionHeading title="Mission History" subtitle="Experience" number="03" align="center" />
 
           <div className="max-w-4xl mx-auto">
             {/* Vertical timeline for all screen sizes */}
@@ -1240,7 +1580,7 @@ export default function Home() {
 
                     {/* Card */}
                     <div className={`md:w-[calc(50%-2rem)] ${index % 2 === 0 ? "md:pl-10" : "md:pr-10"}`}>
-                      <div className="group bg-card border border-border rounded-xl p-5 hover:border-primary/25 transition-all duration-300 hover:shadow-[0_4px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                      <div className="group dossier-card p-5 hover:border-primary/35 transition-all duration-300 relative overflow-hidden">
                         {/* Left accent bar */}
                         <div className="absolute left-0 top-0 bottom-0 w-0.5 rounded-l-xl transition-all duration-300" style={{ background: job.color, opacity: 0.6 }} />
 
@@ -1254,7 +1594,7 @@ export default function Home() {
                             <span className="text-[10px] text-muted-foreground/60">·</span>
                             <span className="text-[10px] text-muted-foreground/80 font-mono">{job.period}</span>
                           </div>
-                          <p className="text-xs text-muted-foreground leading-relaxed mb-3">{job.description}</p>
+                          <p className="text-xs text-muted-foreground leading-relaxed mb-4">{job.description}</p>
                           <div className="flex flex-wrap gap-1.5">
                             {job.tags.map(t => (
                               <span key={t} className="px-2 py-0.5 rounded text-[10px] font-mono" style={{ background: `${job.color}12`, color: job.color, border: `1px solid ${job.color}25` }}>{t}</span>
@@ -1272,269 +1612,155 @@ export default function Home() {
       </section>
 
       {/* ── PROJECTS ── */}
-      <section id="projects" className="py-28 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.02] via-transparent to-primary/[0.02]" />
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/3 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-blue-500/3 blur-[100px] rounded-full pointer-events-none" />
-        
-        <div className="container px-6 max-w-[1100px] mx-auto relative z-10">
-          <SectionHeading title="Selected Works" subtitle="Projects" number="04" align="center" />
+      <section id="projects" className="py-28 relative overflow-hidden bg-background">
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(74,222,128,0.035)_34%,transparent_78%)]" />
+        <div className="container px-6 max-w-[1160px] mx-auto relative z-10">
+          <SectionHeading title="Security Workbench" subtitle="Selected Work" number="04" align="center" />
 
-          {/* Project controls: Premium Search & Filter */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12 space-y-5"
+            className="mb-8 grid gap-5 rounded-xl border border-white/10 bg-white/[0.025] p-5 md:grid-cols-[1fr_0.95fr] md:p-6"
           >
-            {/* Modern Search bar */}
-            <motion.div 
-              whileHover={{ y: -2 }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-blue-500/20 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500 pointer-events-none" />
-              <div className="relative flex items-center gap-3 px-6 py-4 rounded-2xl border border-primary/20 bg-gradient-to-r from-card/80 to-card/40 backdrop-blur-xl hover:border-primary/40 transition-all duration-300 group">
-                <motion.div
-                  animate={{ scale: projectSearch ? 1.1 : 1, color: projectSearch ? "#4ade80" : "#a1a1a1" }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                >
-                  <Search className="w-5 h-5" />
-                </motion.div>
-                <input
-                  type="text"
-                  placeholder="Search projects, technologies, expertise..."
-                  value={projectSearch}
-                  onChange={(e) => setProjectSearch(e.target.value)}
-                  className="flex-1 bg-transparent outline-none text-sm placeholder:text-muted-foreground/40 text-foreground font-medium"
-                />
-                <AnimatePresence>
-                  {projectSearch && (
-                    <motion.button
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0, opacity: 0 }}
-                      onClick={() => setProjectSearch("")}
-                      className="text-muted-foreground hover:text-primary transition-colors p-1.5 hover:bg-primary/5 rounded-lg"
-                    >
-                      <X className="w-4 h-4" />
-                    </motion.button>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
-
-            {/* Filter and Sort controls - Premium Design */}
-            <div className="flex flex-wrap items-center gap-3 p-4 rounded-2xl bg-gradient-to-r from-card/50 to-card/30 border border-border/40 backdrop-blur-sm">
-              {/* Label */}
-              <span className="text-xs font-mono text-muted-foreground/60 uppercase tracking-wider">Filter:</span>
-              
-              {/* Filter tabs with premium styling */}
-              <div className="flex flex-wrap gap-2 flex-1">
-                <motion.button
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setProjectFilter(null)}
-                  className={`relative px-4 py-2 rounded-full font-mono text-xs font-bold transition-all duration-300 overflow-hidden group ${
-                    projectFilter === null
-                      ? "bg-gradient-to-r from-primary to-primary/80 text-black shadow-lg shadow-primary/40"
-                      : "bg-card/60 border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/40"
-                  }`}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                  <span className="relative">All</span>
-                </motion.button>
-                {Array.from(new Set(projects.map(p => p.type))).map(type => (
-                  <motion.button
-                    key={type}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setProjectFilter(type)}
-                    className={`relative px-4 py-2 rounded-full font-mono text-xs font-bold transition-all duration-300 overflow-hidden group ${
-                      projectFilter === type
-                        ? "bg-gradient-to-r from-primary to-primary/80 text-black shadow-lg shadow-primary/40"
-                        : "bg-card/60 border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/40"
-                    }`}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                    <span className="relative">{type.split(" ")[0]}</span>
-                  </motion.button>
+            <div>
+              <p className="mb-2 text-xs font-mono uppercase tracking-[0.22em] text-primary/80">Case studies and shipped systems</p>
+              <h3 className="max-w-2xl text-2xl font-bold leading-tight text-foreground md:text-3xl">
+                Proof-focused projects with clear scope, tools, and security impact.
+              </h3>
+              <div className="mt-5 grid grid-cols-3 gap-2">
+                {[
+                  { label: "Projects", value: projects.length },
+                  { label: "Featured", value: projects.filter((project) => project.featured).length },
+                  { label: "Toolsets", value: new Set(projects.flatMap((project) => project.tech)).size },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-lg border border-white/10 bg-black/20 p-3">
+                    <div className="text-xl font-bold text-foreground">{item.value}</div>
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">{item.label}</div>
+                  </div>
                 ))}
               </div>
-              
-              {/* Sort dropdown - Premium */}
-              <div className="flex items-center gap-2 ml-auto">
-                <span className="text-xs font-mono text-muted-foreground/60 uppercase tracking-wider hidden sm:inline">Sort:</span>
-                <select
-                  value={projectSort}
-                  onChange={(e) => setProjectSort(e.target.value as "date" | "complexity" | "techs")}
-                  className="px-4 py-2 rounded-full border border-border/60 bg-card/60 backdrop-blur-sm text-muted-foreground text-xs font-mono font-bold hover:border-primary/40 hover:text-primary transition-all duration-300 cursor-pointer outline-none appearance-none pr-8"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a1a1a1' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'right 10px center',
-                    paddingRight: '28px'
-                  }}
+            </div>
+
+            <div className="flex flex-col justify-end gap-4">
+              <div className="relative flex min-h-[46px] w-full items-center gap-3 rounded-lg border border-white/10 bg-black/25 px-4">
+                <Search className="h-4 w-4 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="Search projects, tools, topics"
+                  value={projectSearch}
+                  onChange={(e) => setProjectSearch(e.target.value)}
+                  className="min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground/45"
+                />
+                {projectSearch && (
+                  <button onClick={() => setProjectSearch("")} className="rounded-md p-1 text-muted-foreground hover:text-primary">
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setProjectFilter(null)}
+                  className={`rounded-lg border px-3 py-2 text-xs font-mono transition-all ${projectFilter === null ? "border-primary/50 bg-primary text-black" : "border-white/10 bg-black/25 text-muted-foreground hover:text-foreground"}`}
                 >
-                  <option value="date">Latest</option>
-                  <option value="complexity">Complex</option>
-                  <option value="techs">Techs</option>
-                </select>
+                  All
+                </button>
+                {projectFilters.map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => setProjectFilter(type)}
+                    className={`rounded-lg border px-3 py-2 text-xs font-mono transition-all ${projectFilter === type ? "border-primary/50 bg-primary text-black" : "border-white/10 bg-black/25 text-muted-foreground hover:text-foreground"}`}
+                  >
+                    {type}
+                  </button>
+                ))}
               </div>
             </div>
           </motion.div>
 
-          {/* Featured projects - Enhanced */}
-          {projects.filter(p => p.featured).length > 0 && (
-            <div className="mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="mb-8 flex items-center gap-4"
-              >
-                <div className="h-12 w-1 bg-gradient-to-b from-primary via-primary/60 to-primary/20 rounded-full" />
-                <div>
-                  <motion.p 
-                    className="text-base font-mono text-primary font-bold uppercase tracking-widest flex items-center gap-2"
-                    whileHover={{ x: 2 }}
-                  >
-                    <motion.span animate={{ rotate: [0, 12, 0] }} transition={{ duration: 2, repeat: Infinity }}>✦</motion.span>
-                    Featured Projects
-                    <motion.span animate={{ rotate: [0, -12, 0] }} transition={{ duration: 2, repeat: Infinity }}>✦</motion.span>
-                  </motion.p>
-                  <p className="text-xs text-muted-foreground/70 mt-1">Showcasing my most impressive and complete work</p>
-                </div>
-              </motion.div>
-              <div className="grid md:grid-cols-2 gap-7">
-                {projects.filter(p => p.featured).map((project, index) => (
-                  <EnhancedProjectCard
-                    key={project.title}
-                    project={project}
-                    index={index}
-                    onPreview={(proj) => {
-                      setSelectedProject(proj);
-                      setIsPreviewOpen(true);
-                    }}
-                  />
-                ))}
+          {visibleProjects.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="rounded-xl border border-white/10 bg-white/[0.025] py-16 text-center"
+            >
+              <Search className="w-9 h-9 mx-auto mb-4 text-primary" />
+              <p className="text-muted-foreground text-sm font-mono">No projects match your filters.</p>
+              <p className="text-muted-foreground/60 text-xs font-mono mt-1">Try another category or keyword.</p>
+            </motion.div>
+          ) : (
+            <>
+              <div className="mb-6">
+                <EnhancedProjectCard
+                  project={{ ...visibleProjects[0], featured: true }}
+                  index={0}
+                  onPreview={(proj) => {
+                    setSelectedProject(proj);
+                    setIsPreviewOpen(true);
+                  }}
+                />
               </div>
-            </div>
-          )}
 
-          {/* Filtered and sorted projects */}
-          <div className="space-y-8">
-            {projects.filter(p => !p.featured).length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-4"
-              >
-                <div className="h-9 w-0.5 bg-gradient-to-b from-primary/60 to-primary/10 rounded-full" />
+              {visibleProjects.length > 1 && (
                 <div>
-                  <p className="text-sm font-mono text-muted-foreground/80 font-bold uppercase tracking-widest">Portfolio</p>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">Complete collection of projects & research</p>
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <h3 className="font-mono text-sm font-bold uppercase tracking-[0.18em] text-muted-foreground">More evidence</h3>
+                    <span className="text-xs text-muted-foreground/60">{visibleProjects.length - 1} matching projects</span>
+                  </div>
+                  <div className="grid gap-5 md:grid-cols-2">
+                    {visibleProjects.slice(1).map((project, index) => (
+                      <EnhancedProjectCard
+                        key={project.title}
+                        project={{ ...project, featured: false }}
+                        index={index + 1}
+                        onPreview={(proj) => {
+                          setSelectedProject(proj);
+                          setIsPreviewOpen(true);
+                        }}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
-            )}
-            
-            {/* Projects grid - Dynamic masonry layout */}
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-              {(() => {
-                let filtered = projects.filter(p => !p.featured);
-                
-                // Apply search filter
-                if (projectSearch) {
-                  filtered = filtered.filter(p =>
-                    p.title.toLowerCase().includes(projectSearch.toLowerCase()) ||
-                    p.description.toLowerCase().includes(projectSearch.toLowerCase()) ||
-                    p.tech.some(t => t.toLowerCase().includes(projectSearch.toLowerCase()))
-                  );
-                }
-                
-                // Apply type filter
-                if (projectFilter) {
-                  filtered = filtered.filter(p => p.type === projectFilter);
-                }
-                
-                // Apply sorting
-                filtered.sort((a, b) => {
-                  if (projectSort === "date") {
-                    return (new Date(b.period.split(" – ")[1]).getTime() || 0) - (new Date(a.period.split(" – ")[1]).getTime() || 0);
-                  } else if (projectSort === "complexity") {
-                    return b.stats.views - a.stats.views;
-                  } else if (projectSort === "techs") {
-                    return b.tech.length - a.tech.length;
-                  }
-                  return 0;
-                });
-                
-                if (filtered.length === 0) {
-                  return (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="md:col-span-2 lg:col-span-3 py-16 text-center"
-                    >
-                      <motion.div
-                        animate={{ y: [0, -5, 0] }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                        className="inline-block mb-4 text-4xl"
-                      >
-                        🔍
-                      </motion.div>
-                      <p className="text-muted-foreground text-sm font-mono">No projects match your filters.</p>
-                      <p className="text-muted-foreground/60 text-xs font-mono mt-1">Try adjusting your search or selecting different categories.</p>
-                    </motion.div>
-                  );
-                }
-                
-                return filtered.map((project, index) => (
-                  <EnhancedProjectCard
-                    key={project.title}
-                    project={project}
-                    index={index}
-                    onPreview={(proj) => {
-                      setSelectedProject(proj);
-                      setIsPreviewOpen(true);
-                    }}
-                  />
-                ));
-              })()}
-            </div>
-          </div>
+              )}
+            </>
+          )}
         </div>
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="contact" className="py-24 relative">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683311-eac922347aa1?w=1920&q=80')] bg-cover bg-center opacity-[0.03] pointer-events-none" />
-        <div className="container px-6 relative z-10 max-w-[1100px] mx-auto">
-          <SectionHeading title="Get In Touch" subtitle="Contact" number="05" align="center" />
+      <section id="contact" className="py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(74,222,128,0.1),transparent_30%),linear-gradient(to_bottom,transparent,rgba(0,0,0,0.35))] pointer-events-none" />
+        <div className="container px-6 relative z-10 max-w-[1160px] mx-auto">
+          <SectionHeading title="Open Channel" subtitle="Contact" number="05" align="center" />
 
-          <div className="max-w-4xl mx-auto grid md:grid-cols-5 gap-10">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-7">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="md:col-span-2 space-y-6"
+              className="md:col-span-2 dossier-card p-7 space-y-6"
             >
-              <div>
-                <h3 className="font-bold text-foreground mb-2 font-mono text-sm">Let's work together</h3>
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] font-mono text-primary mb-4">
+                  <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                  Available for security work
+                </div>
+                <h3 className="font-bold text-foreground mb-2 font-mono text-xl">Let's work together</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Open to internships, freelance projects, and security collaborations.
-                  Whether you have a project or just want to chat — my inbox is open.
+                  Open to penetration testing, SOC, secure web development, and security internship opportunities.
+                  If you need clear reporting and practical remediation, my inbox is open.
                 </p>
               </div>
 
-              <div className="space-y-3">
+              <div className="relative z-10 space-y-3">
                 {[
                   { icon: Mail, label: "mostafa.karam.work@gmail.com", href: "mailto:mostafa.karam.work@gmail.com" },
+                  { icon: Phone, label: "+20 101 118 7105", href: "tel:+201011187105" },
                   { icon: Globe, label: "Alexandria, Egypt", href: "#" },
                 ].map(({ icon: Icon, label, href }) => (
                   <a key={label} href={href} className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
-                    <div className="w-8 h-8 rounded-lg bg-card border border-border flex items-center justify-center group-hover:border-primary/30 transition-colors">
+                    <div className="w-9 h-9 rounded-lg bg-black/30 border border-white/10 flex items-center justify-center group-hover:border-primary/30 transition-colors">
                       <Icon className="w-4 h-4" />
                     </div>
                     {label}
@@ -1542,7 +1768,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div>
+              <div className="relative z-10">
                 <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider mb-3">Social</p>
                 <div className="flex gap-3">
                   {[
@@ -1550,7 +1776,7 @@ export default function Home() {
                     { href: "https://linkedin.com/in/mostafakrm", icon: Linkedin },
                   ].map(({ href, icon: Icon }) => (
                     <a key={href} href={href} target="_blank" rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-lg border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
+                      className="w-10 h-10 rounded-lg border border-white/10 bg-black/25 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
                       <Icon className="w-4 h-4" />
                     </a>
                   ))}
@@ -1565,7 +1791,7 @@ export default function Home() {
               className="md:col-span-3"
             >
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 bg-card p-7 rounded-2xl border border-border shadow-2xl relative overflow-hidden">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="dossier-card space-y-4 p-7">
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                   <div className="grid sm:grid-cols-2 gap-4">
                     <FormField control={form.control} name="name" render={({ field }) => (

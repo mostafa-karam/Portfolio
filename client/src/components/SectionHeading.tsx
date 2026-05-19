@@ -19,16 +19,16 @@ export function SectionHeading({ title, subtitle, number, align = "left" }: Sect
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className={`flex flex-col mb-12 ${alignmentClass}`}
+      className={`flex flex-col mb-14 ${alignmentClass}`}
     >
-      <div className="flex items-center gap-2 mb-2">
-        <span className="font-mono text-primary text-sm font-bold">{number}.</span>
-        <span className="font-mono text-primary/60 text-sm tracking-widest uppercase">{subtitle}</span>
+      <div className="inline-flex items-center gap-2 mb-3 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
+        <span className="font-mono text-primary text-xs font-bold">{number}.</span>
+        <span className="font-mono text-primary/70 text-xs tracking-widest uppercase">{subtitle}</span>
       </div>
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white relative">
+      <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white relative">
         {title}
-        <div className={`absolute -bottom-4 ${align === "center" ? "left-1/2 -translate-x-1/2" : align === "right" ? "right-0" : "left-0"} w-20 h-1 bg-primary rounded-full`} />
-        <div className={`absolute -bottom-4 ${align === "center" ? "left-1/2 -translate-x-1/2" : align === "right" ? "right-0" : "left-0"} w-20 h-1 bg-primary blur-sm`} />
+        <div className={`absolute -bottom-5 ${align === "center" ? "left-1/2 -translate-x-1/2" : align === "right" ? "right-0" : "left-0"} h-px w-32 bg-gradient-to-r from-transparent via-primary to-transparent`} />
+        <div className={`absolute -bottom-5 ${align === "center" ? "left-1/2 -translate-x-1/2" : align === "right" ? "right-0" : "left-0"} h-px w-32 bg-primary blur-sm`} />
       </h2>
     </motion.div>
   );

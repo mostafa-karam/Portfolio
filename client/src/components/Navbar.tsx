@@ -32,7 +32,7 @@ export function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center max-w-[1100px] relative z-[60]">
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center max-w-[1100px] relative z-[60]">
         <Link
           to="hero"
           smooth={true}
@@ -48,7 +48,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6 pointer-events-auto">
+        <div className="hidden lg:flex items-center gap-6 pointer-events-auto">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -76,7 +76,7 @@ export function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 md:hidden pointer-events-auto">
+        <div className="flex items-center gap-4 lg:hidden pointer-events-auto">
           <button
             className="text-foreground p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -94,7 +94,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="lg:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
               {navItems.map((item) => (
@@ -112,7 +112,8 @@ export function Navbar() {
                 </Link>
               ))}
               <a
-                href="#"
+                href="/resume.pdf"
+                download="Mostafa_Karam_Resume.pdf"
                 className="mt-4 px-5 py-3 text-center rounded font-mono text-sm font-bold bg-primary text-black"
               >
                 Download CV
