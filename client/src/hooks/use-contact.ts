@@ -10,7 +10,7 @@ export function useContact() {
     mutationFn: async (data: InsertMessage) => {
       const base =
         (import.meta.env.VITE_API_BASE as string) ||
-        "https://portfolio-mk-backend.up.railway.app";
+        (typeof window !== "undefined" ? window.location.origin : "");
       const url = base
         ? `${base.replace(/\/$/, "")}${api.contact.submit.path}`
         : api.contact.submit.path;

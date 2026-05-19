@@ -4,7 +4,7 @@ import { rm, readFile } from "fs/promises";
 
 // Minimal server deps to bundle. Keep this list small to reduce bundle size.
 // Move non-essential deps to externals so they are loaded from node_modules at runtime.
-const allowlist = ["express", "pg", "ws"];
+const allowlist = ["express", "mongoose", "ws"];
 
 async function buildAll() {
   await rm("dist", { recursive: true, force: true });
